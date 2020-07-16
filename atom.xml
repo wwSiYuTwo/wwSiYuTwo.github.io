@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wwSiYuTwo.github.io/"/>
-  <updated>2020-05-31T08:37:12.326Z</updated>
+  <updated>2020-07-16T09:53:52.322Z</updated>
   <id>https://wwSiYuTwo.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Spring常用注解</title>
+    <link href="https://wwSiYuTwo.github.io/2020/07/16/spring-chang-yong-zhu-jie/"/>
+    <id>https://wwSiYuTwo.github.io/2020/07/16/spring-chang-yong-zhu-jie/</id>
+    <published>2020-07-16T09:25:59.000Z</published>
+    <updated>2020-07-16T09:53:52.322Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Spring部分&quot;&gt;&lt;a href=&quot;#Spring部分&quot; class=&quot;headerlink&quot; title=&quot;Spring部分&quot;&gt;&lt;/a&gt;Spring部分&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;声明bean的注解&lt;/strong&gt;&lt;br&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="Spring" scheme="https://wwSiYuTwo.github.io/categories/Spring/"/>
+    
+    
+      <category term="Spring" scheme="https://wwSiYuTwo.github.io/tags/Spring/"/>
+    
+  </entry>
   
   <entry>
     <title>JAVA NIO</title>
@@ -39,6 +66,33 @@
     
     
       <category term="NIO" scheme="https://wwSiYuTwo.github.io/tags/NIO/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>简历</title>
+    <link href="https://wwSiYuTwo.github.io/2020/05/31/zheng-zhou-xi-ya-si-guo-ji-xue-yuan-wang-si-yu-java-gong-cheng-shi/"/>
+    <id>https://wwSiYuTwo.github.io/2020/05/31/zheng-zhou-xi-ya-si-guo-ji-xue-yuan-wang-si-yu-java-gong-cheng-shi/</id>
+    <published>2020-05-31T07:55:09.000Z</published>
+    <updated>2020-07-05T10:31:42.467Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;王思宇&quot;&gt;&lt;a href=&quot;#王思宇&quot; class=&quot;headerlink&quot; title=&quot;王思宇&quot;&gt;&lt;/a&gt;王思宇&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;男 21 岁&lt;/strong&gt;   (1999 年 1
+        
+      
+    
+    </summary>
+    
+      <category term="简历" scheme="https://wwSiYuTwo.github.io/categories/%E7%AE%80%E5%8E%86/"/>
+    
+    
+      <category term="简历" scheme="https://wwSiYuTwo.github.io/tags/%E7%AE%80%E5%8E%86/"/>
     
   </entry>
   

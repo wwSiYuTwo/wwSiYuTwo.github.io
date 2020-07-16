@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Spring常用注解</title>
+      <link href="/2020/07/16/spring-chang-yong-zhu-jie/"/>
+      <url>/2020/07/16/spring-chang-yong-zhu-jie/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Spring部分"><a href="#Spring部分" class="headerlink" title="Spring部分"></a>Spring部分</h1><ol><li><p><strong>声明bean的注解</strong><br> @Component 组件，没有明确的角色</p><p> @Service 在业务逻辑层使用（service层）</p><p> @Repository 在数据访问层使用（dao层）</p><p> @Controller 在展现层使用，控制器的声明（C）</p></li><li><p><strong>注入bean的注解</strong><br> @Autowired：由Spring提供</p><p> @Inject：由JSR-330提供</p><p> @Resource：由JSR-250提供</p></li><li><p><strong>java配置类相关注解</strong><br> @Configuration 声明当前类为配置类，相当于xml形式的Spring配置（类上）  </p><p> @Bean 注解在方法上，声明当前方法的返回值为一个bean，替代xml中的方式（方法上）  </p><p> @Configuration 声明当前类为配置类，其中内部组合了@Component注解，表明这个类是一个bean（类上）  </p><p> @ComponentScan 用于对Component进行扫描，相当于xml中的（类上）  </p><p> @WishlyConfiguration 为@Configuration与@ComponentScan的组合注解，可以替代这两个注解</p></li><li><p><strong>切面（AOP）相关注解</strong><br> Spring支持AspectJ的注解式切面编程。 </p><p> @Aspect 声明一个切面（类上）  </p><p> 使用@After、@Before、@Around定义建言（advice），可直接将拦截规则（切点）作为参数。  </p><p> @After 在方法执行之后执行（方法上）  </p><p> @Before 在方法执行之前执行（方法上）  </p><p> @Around 在方法执行之前与之后执行（方法上）  </p><p> @PointCut 声明切点  </p></li><li><p><strong>@Bean的属性支持</strong><br> @Scope 设置Spring容器如何新建Bean实例（方法上，得有@Bean）  </p><pre><code> 其设置类型包括：   Singleton （单例,一个Spring容器中只有一个bean实例，默认模式）,   Protetype （每次调用新建一个bean）,   Request （web项目中，给每个http request新建一个bean）,   Session （web项目中，给每个http session新建一个bean）,   GlobalSession（给每一个 global http session新建一个Bean实例）  </code></pre><p> @StepScope 在Spring Batch中还有涉及  </p><p> @PostConstruct 由JSR-250提供，在构造函数执行完之后执行，等价于xml配置文件中bean的initMethod  </p><p> @PreDestory 由JSR-250提供，在Bean销毁之前执行，等价于xml配置文件中bean的destroyMethod  </p></li><li><p><strong>@Value注解</strong><br>@Value 为属性注入值（属性上）<br>支持如下方式的注入： </p><p> <font color="green">注入普通字符:</font></p><pre class="line-numbers language-java"><code class="language-java"> <span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span><span class="token string">"Michael Jackson"</span><span class="token punctuation">)</span> String name<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p> <font color="green">注入操作系统属性:</font></p><pre class="line-numbers language-java"><code class="language-java"> <span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span><span class="token string">"#{systemProperties['os.name']}"</span><span class="token punctuation">)</span> String osName<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p> <font color="green">注入表达式结果:</font></p><pre class="line-numbers language-java"><code class="language-java"> <span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span><span class="token string">"#{ T(java.lang.Math).random() * 100}"</span><span class="token punctuation">)</span> String randomNumber<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p> <font color="green">注入其它bean属性:</font></p><pre class="line-numbers language-java"><code class="language-java"> <span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span><span class="token string">"#{domeClass.name}"</span><span class="token punctuation">)</span> String name<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p> <font color="green">注入文件资源:</font></p><pre class="line-numbers language-java"><code class="language-java"> <span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span><span class="token string">"classPath:com/siyu/hello/test.txt"</span><span class="token punctuation">)</span> String Resource file<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p> <font color="green">注入网站资源:</font></p><pre class="line-numbers language-java"><code class="language-java"> <span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span><span class="token string">"http://www.baidu.com"</span><span class="token punctuation">)</span> String url<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p> <font color="green">注入配置文件:</font></p><pre class="line-numbers language-java"><code class="language-java"> <span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span><span class="token string">"${bock.name}"</span><span class="token punctuation">)</span> String bookName<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p> <strong>注入配置使用方法:</strong><br> ① 编写配置文件（test.properties）</p><pre><code> book.name=《三体》</code></pre><p> ② @PropertySource 加载配置文件(类上)  </p><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@PropertySource</span><span class="token punctuation">(</span><span class="token string">"classpath:com/siyu/hello/test.propertie"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li></ol><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Spring </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Spring </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JAVA NIO</title>
       <link href="/2020/05/31/java-nio/"/>
       <url>/2020/05/31/java-nio/</url>
@@ -21,6 +46,31 @@
         <tags>
             
             <tag> NIO </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>简历</title>
+      <link href="/2020/05/31/zheng-zhou-xi-ya-si-guo-ji-xue-yuan-wang-si-yu-java-gong-cheng-shi/"/>
+      <url>/2020/05/31/zheng-zhou-xi-ya-si-guo-ji-xue-yuan-wang-si-yu-java-gong-cheng-shi/</url>
+      
+        <content type="html"><![CDATA[<h1 id="王思宇"><a href="#王思宇" class="headerlink" title="王思宇"></a>王思宇</h1><ul><li><p><strong>男 21 岁</strong>   (1999 年 1 月)</p></li><li><p><strong>郑州西亚斯国际学院 电子信息工程 本科 在读大三</strong></p></li><li><p><strong>邮箱：</strong> 1446593786@qq.com</p></li><li><p><strong>个人博客：<a href="https://wwsiyu.github.io/" target="_blank" rel="noopener">https://wwsiyu.github.io/</a></strong></p></li><li><p><strong>求职意向:</strong>  Java 实习生</p></li></ul><h2 id="教育背景："><a href="#教育背景：" class="headerlink" title="教育背景："></a>教育背景：</h2><p><strong>郑州西亚斯国际学院 本科 2017 年 9 月 — 2021 年 6 月   专业：电子信息工程</strong>  </p><h2 id="个人能力及特长："><a href="#个人能力及特长：" class="headerlink" title="个人能力及特长："></a><strong><em>个人能力及特长：</em></strong></h2><ul><li>熟悉 Java基础； </li><li>了解JVM 虚拟机的内存模型以及垃圾回收器；</li><li>了解 Java 多线程与锁以及集合概念；</li><li>掌握Spring、SpringMVC、Mybatis、Hibernate 等主流框架集成使用；</li><li>熟悉 MySQL 关系型数据库操作，索引机制，了解 Sql 优化，以及分库分表，主从复制；</li><li>了解 NoSQL Redis 非关系型据库操作；</li><li>熟悉基本数据结构与算法；</li><li>熟悉 Maven 项目管理工具，了解 Git 版本控制工具以及docker容器</li><li>了解基本的 Linux 操作系统基本操作命令; </li><li>使用过 SpringBoot，SpringCloud；</li></ul><h2 id="项目经历："><a href="#项目经历：" class="headerlink" title="项目经历："></a>项目经历：</h2><p>2020.03 — 2020.06<br><strong>项目名称</strong>：谷粒商城后台管理系统</p><ul><li><strong>项目使用:</strong> SpringBoot、SpringCloud Alibaba、Mybatis、docker等。</li><li><strong>主要模块有:</strong> 商品、购物车、订单、库存等。</li><li><strong>技术难点：</strong>基于人人开源实现对后台商品的维护； 实现前后端分离；基于springCloud实现为微服务的开发；将前端发送的数据与数据库中存储的数据进行交互；使用nacos实现服务的注册发现和配置；使用gateway对请求进行过滤、路由等；使用JSR303进行实现后端的校验；以及openFeign实现远程调用。</li><li><strong>项目心得</strong>：该项目几乎将之前学到的知识全部用了一遍，对微服务有了更深一层的了解。更深刻的理解了面向接口编程。学到了如何对后台数据进行更好的维护。此间也发现了自己较对的薄弱点，这对以后的学习重点以及方式有了很大的帮助。</li></ul><h2 id="校园经历："><a href="#校园经历：" class="headerlink" title="校园经历："></a>校园经历：</h2><p><strong>2018.9 — 2020.4 |加入学校软件工作室学习 Java。</strong></p><h2 id="所获奖励："><a href="#所获奖励：" class="headerlink" title="所获奖励："></a>所获奖励：</h2><p> <strong>- 大学生创新项目证书</strong></p><h2 id="自我评价："><a href="#自我评价：" class="headerlink" title="自我评价："></a>自我评价：</h2><p> 热爱编程；自学能力强有单独解决问题的能力；有很好的团队协作能力；性格开朗；抗压能力强；具有合格的时间管理理念。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 简历 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 简历 </tag>
             
         </tags>
       
