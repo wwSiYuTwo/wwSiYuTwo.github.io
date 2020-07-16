@@ -2,23 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://wwSiYuTwo.github.io/2020/07/16/spring-chang-yong-zhu-jie/</loc>
+    <loc>https://wwSiYuTwo.github.io/2020/05/31/java-nio/</loc>
     
-    <lastmod>2020-07-16T10:04:17.202Z</lastmod>
+    <lastmod>2020-07-16T10:29:55.213Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://wwSiYuTwo.github.io/2020/05/31/zheng-zhou-xi-ya-si-guo-ji-xue-yuan-wang-si-yu-java-gong-cheng-shi/</loc>
     
-    <lastmod>2020-07-05T10:31:42.467Z</lastmod>
+    <lastmod>2020-07-16T10:29:53.771Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://wwSiYuTwo.github.io/2020/05/31/java-nio/</loc>
+    <loc>https://wwSiYuTwo.github.io/2020/07/16/mybatis-chang-yong-zhu-jie/</loc>
     
-    <lastmod>2020-05-31T08:37:12.326Z</lastmod>
+    <lastmod>2020-07-16T10:26:04.729Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wwSiYuTwo.github.io/2020/07/16/spring-chang-yong-zhu-jie/</loc>
+    
+    <lastmod>2020-07-16T10:04:17.202Z</lastmod>
     
   </url>
   
@@ -37,13 +44,6 @@
   </url>
   
   <url>
-    <loc>https://wwSiYuTwo.github.io/galleries/index.html</loc>
-    
-    <lastmod>2020-05-23T14:23:34.595Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://wwSiYuTwo.github.io/galleries/%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%873/index.html</loc>
     
     <lastmod>2020-05-23T14:23:34.595Z</lastmod>
@@ -51,7 +51,35 @@
   </url>
   
   <url>
-    <loc>https://wwSiYuTwo.github.io/categories/index.html</loc>
+    <loc>https://wwSiYuTwo.github.io/galleries/index.html</loc>
+    
+    <lastmod>2020-05-23T14:23:34.595Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wwSiYuTwo.github.io/contact/index.html</loc>
+    
+    <lastmod>2019-10-04T03:57:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wwSiYuTwo.github.io/tags/index.html</loc>
+    
+    <lastmod>2019-10-04T03:57:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wwSiYuTwo.github.io/archives/index.html</loc>
+    
+    <lastmod>2019-10-04T03:57:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wwSiYuTwo.github.io/friends/index.html</loc>
     
     <lastmod>2019-10-04T03:57:55.000Z</lastmod>
     
@@ -72,28 +100,7 @@
   </url>
   
   <url>
-    <loc>https://wwSiYuTwo.github.io/friends/index.html</loc>
-    
-    <lastmod>2019-10-04T03:57:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wwSiYuTwo.github.io/contact/index.html</loc>
-    
-    <lastmod>2019-10-04T03:57:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wwSiYuTwo.github.io/tags/index.html</loc>
-    
-    <lastmod>2019-10-04T03:57:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wwSiYuTwo.github.io/archives/index.html</loc>
+    <loc>https://wwSiYuTwo.github.io/categories/index.html</loc>
     
     <lastmod>2019-10-04T03:57:55.000Z</lastmod>
     
